@@ -7,11 +7,11 @@ The default is to only notify you if you're AFK.
 ### `teran w/whisper`
 - Toggle /w notify on/off, default is on
 ### `teran wafk/whisperafk`
-- Toggle /w AFK notify on/off, default is on
+- Toggle /w only while AFK notify on/off, default is on
 ### `teran at/atat`
 - Toggle @@/@character.name notify on/off, default is on
 ### `teran atafk/atatafk`
-- Toggle @@/@character.name AFK notify on/off, default is on
+- Toggle @@/@character.name only while AFK notify on/off, default is on
 
 ## Conflicts
 Conflicts with the proxy module 'afk-notify'

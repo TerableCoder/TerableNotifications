@@ -56,7 +56,7 @@ module.exports = function TerableNotifications(mod) {
 			else command.message("Invalid argument. Type 'teran w', 'teran wafk', 'teran at', or 'teran atafk'");
 			mod.saveSettings();
 		} else command.message("Invalid argument. Type 'teran w', 'teran wafk', 'teran at', or 'teran atafk'");
-		command.message(`Whisper notify is ${mod.settings.whisper ? "enabled" : "disabled"} & Whisper afk is ${mod.settings.whisperafk ? "enabled" : "disabled"}.`);
-		command.message(`@@ notify is ${mod.settings.atat ? "enabled" : "disabled"} & @@ afk is ${mod.settings.atatafk ? "enabled" : "disabled"}.`);
+		command.message(`Whisper notify is ${mod.settings.whisper ? "enabled" : "disabled"} & Whisper only while AFK is ${mod.settings.whisperafk ? "enabled" : "disabled"}.`);
+		command.message(`@@ notify is ${mod.settings.atat ? "enabled" : "disabled"} & @@ only while AFK is ${mod.settings.atatafk ? "enabled" : "disabled"}.`);
 	});
 }
