@@ -1,0 +1,14 @@
+{
+	"files": {
+		"index.js": "046b78550331ad3fa6bc0cbb3d7785d5e47aaa24095a2696f960c0e0e36ab4d2",
+		"module.json": "44dde32f78b532a5b31b7ed7ce2eeedd161f96d270e6e50b8b73ac8b777dd609",
+		"README.md": "b60ee8d5ad4955f5e4d5d08f8c77450df3d71a1ff3eeb46a2365e6975a31db47",
+		"settings_migrator.js": "f667859e8ff92d412d178bdee8079b79cff0c865563580480a59ed12cce5db94"
+	},
+	"defs": {
+		"S_LOGIN": 12,
+		"S_WHISPER": 2,
+		"S_CHAT": 2,
+		"S_PRIVATE_CHAT": 1
+	}
+}

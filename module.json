@@ -1,0 +1,12 @@
+{
+    "disableAutoUpdate": false,
+    "name": "TerableNotifications",
+    "author": "TerableCoder",
+    "description": "Alerts you when you get /w ed, or when someone types @@ or @myName in chat.",
+    "version": "1",
+    "servers": ["https://raw.githubusercontent.com/TerableCoder/TerableNotifications/master/"],
+	"dependencies": {
+        "notifier":"https://raw.githubusercontent.com/SerenTera/tera-notifier/master/module.json"
+    },
+    "conflicts": ["afk-notify"]
+}
