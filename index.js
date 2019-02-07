@@ -49,10 +49,10 @@ module.exports = function TerableNotifications(mod) {
 	command.add(['teran', 'tnotify', 'terablenotifications'], (p1) => {
 		if(p1){
 			p1 = p1.toLowerCase();
-			if(p1 == "w" || "whisper") mod.settings.whisper = !mod.settings.whisper;
 			if(p1 == "wafk" || "whisperafk") mod.settings.whisperafk = !mod.settings.whisperafk;
-			else if(p1 == "at" || "atat") mod.settings.atat = !mod.settings.atat;
+			else if(p1 == "w" || "whisper") mod.settings.whisper = !mod.settings.whisper;
 			else if(p1 == "atafk" || "atatafk") mod.settings.atatafk = !mod.settings.atatafk;
+			else if(p1 == "at" || "atat") mod.settings.atat = !mod.settings.atat;
 			else command.message("Invalid argument. Type 'teran w', 'teran wafk', 'teran at', or 'teran atafk'");
 			mod.saveSettings();
 		} else command.message("Invalid argument. Type 'teran w', 'teran wafk', 'teran at', or 'teran atafk'");
