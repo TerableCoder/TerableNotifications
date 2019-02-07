@@ -22,29 +22,27 @@ module.exports = function TerableNotifications(mod) {
 	
 	mod.hook('S_WHISPER', 2, (event) => { 
 		if(mod.game.me.is(event.player)) return;
-		if(mod.settings.whisper){
-			if(mod.settings.whisperafk) notifier.messageafk(`[${event.authorName}] ${event.message}`);
-			else notifier.message(`[${event.authorName}] ${event.message}`);
-		}
-		if(mod.settings.atat && (event.message.includes(`@@`) || (myName != null &&  event.message.includes(`@${myName}`)))){
-			if(mod.settings.atatafk) notifier.message(`[${event.authorName}] @@`);
-			else notifier.message(`[${event.authorName}] @@`);
-		}
+		if(mod.settings.whisper && mod.settings.whisperafk){
+			notifier.messageafk(`[${event.authorName}] ${event.message}`);
+		} else if(mod.settings.whisper && !mod.settings.whisperafk){
+			notifier.message(`[${event.authorName}] ${event.message}`);
+		} else checkAtAt(event.message);
 	});
 	mod.hook('S_CHAT', 2, (event) => {
-		if(mod.game.me.is(event.player)) return;
-		if(mod.settings.atat && (event.message.includes(`@@`) || (myName != null &&  event.message.includes(`@${myName}`)))){
-			if(mod.settings.atatafk) notifier.message(`[${event.authorName}] @@`);
-			else notifier.message(`[${event.authorName}] @@`);
-		}
+		if(mod.game.me.is(event.authorID)) return;
+		checkAtAt(event.message);
 	});
 	mod.hook('S_PRIVATE_CHAT', 1, (event) => {
-		if(mod.game.me.is(event.player)) return;
-		if(mod.settings.atat && (event.message.includes(`@@`) || (myName != null &&  event.message.includes(`@${myName}`)))){
-			if(mod.settings.atatafk) notifier.message(`[${event.authorName}] @@`);
+		if(mod.game.me.is(event.authorID)) return;
+		checkAtAt(event.message);
+	});
+	
+	function checkAtAt(msg){
+		if(mod.settings.atat && (msg.includes(`@@`) || (myName != null &&  msg.includes(`@${myName}`)))){
+			if(mod.settings.atatafk) notifier.messageafk(`[${event.authorName}] @@`);
 			else notifier.message(`[${event.authorName}] @@`);
 		}
-	});
+	}
 	
 	command.add(['teran', 'tnotify', 'terablenotifications'], (p1) => {
 		if(p1){

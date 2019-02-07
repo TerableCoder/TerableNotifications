@@ -1,7 +1,7 @@
 # TerableNotifications
 Alerts you when you get /w ed, or when someone types @@ or @myName in chat.
 
-The default is to only notify you if you're AFK.
+The default is to only notify you if you're AFK (tabbed out).
 
 ## Usage
 ### `teran w/whisper`
