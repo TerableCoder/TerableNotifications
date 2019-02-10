@@ -26,21 +26,21 @@ module.exports = function TerableNotifications(mod) {
 			notifier.messageafk(`[${event.authorName}] ${event.message}`);
 		} else if(mod.settings.whisper && !mod.settings.whisperafk){
 			notifier.message(`[${event.authorName}] ${event.message}`);
-		} else checkAtAt(event.message);
+		} else checkAtAt(event.message, event.authorName);
 	});
 	mod.hook('S_CHAT', 2, (event) => {
 		if(mod.game.me.is(event.authorID)) return;
-		checkAtAt(event.message);
+		checkAtAt(event.message, event.authorName);
 	});
 	mod.hook('S_PRIVATE_CHAT', 1, (event) => {
 		if(mod.game.me.is(event.authorID)) return;
-		checkAtAt(event.message);
+		checkAtAt(event.message, event.authorName);
 	});
 	
-	function checkAtAt(msg){
+	function checkAtAt(msg, author){
 		if(mod.settings.atat && (msg.includes(`@@`) || (myName != null &&  msg.includes(`@${myName}`)))){
-			if(mod.settings.atatafk) notifier.messageafk(`[${event.authorName}] @@`);
-			else notifier.message(`[${event.authorName}] @@`);
+			if(mod.settings.atatafk) notifier.messageafk(`[${author}] @@`);
+			else notifier.message(`[${author}] @@`);
 		}
 	}
 	
