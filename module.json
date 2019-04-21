@@ -3,9 +3,9 @@
     "name": "TerableNotifications",
     "author": "TerableCoder",
     "description": "Alerts you when you get /w ed, or when someone types @@ or @myName in chat.",
-    "version": "1",
+    "version": "2",
 	"options": {
-        "settingsVersion": 1,
+        "settingsVersion": 2,
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js"
     },

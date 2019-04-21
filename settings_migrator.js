@@ -2,7 +2,14 @@ const DefaultSettings = {
 		"atat": true,
         "atatafk": true,
         "whisper": true,
-        "whisperafk": true
+        "whisperafk": true,
+		"blockedChannels": [
+			0,
+            3,
+			4,
+            10,
+            27
+        ]
 };
 
 module.exports = function MigrateSettings(from_ver, to_ver, settings) {

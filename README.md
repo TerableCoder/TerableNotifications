@@ -1,5 +1,5 @@
 # TerableNotifications
-Alerts you when you get /w ed, or when someone types @@ or @myName in chat.
+Alerts you when you get /w ed, or when someone types @@ or @myName in an unblocked chat.
 
 The default is to only notify you if you're AFK (tabbed out).
 
@@ -12,6 +12,8 @@ The default is to only notify you if you're AFK (tabbed out).
 - Toggle @@/@character.name notify on/off, default is on
 ### `teran atafk/atatafk`
 - Toggle @@/@character.name only while AFK notify on/off, default is on
+### `teran ch # a/r`
+- Add or Remove a channel from the blocked channels list
 
 ## Conflicts
 Conflicts with the proxy module 'afk-notify'
@@ -21,4 +23,3 @@ Conflicts with the proxy module 'afk-notify'
 
 ## Todo
 - Add notification options for broker requests
-- Recieve notifications only from certain channels of your choosing
