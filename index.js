@@ -13,22 +13,18 @@ module.exports = function TerableNotifications(mod) {
 		}
 	}
 	
-	mod.hook('S_WHISPER', 2, (event) => { 
+	mod.hook('S_WHISPER', 3, (event) => { 
 		if(mod.game.me.is(event.player)) return;
 		if(mod.settings.whisper && mod.settings.whisperafk){
-			notifier.messageafk(`[${event.authorName}] ${event.message}`);
+			notifier.messageafk(`[${event.name}] ${event.message}`);
 		} else if(mod.settings.whisper && !mod.settings.whisperafk){
-			notifier.message(`[${event.authorName}] ${event.message}`);
-		} else checkAtAt(event.message, event.authorName);
+			notifier.message(`[${event.name}] ${event.message}`);
+		} else checkAtAt(event.message, event.name);
 	});
-	mod.hook('S_CHAT', 2, (event) => {
+	mod.hook('S_CHAT', 3, (event) => {
 		if(mod.game.me.is(event.authorID)) return;
 		if(mod.settings.blockedChannels.includes(event.channel)) return;
-		checkAtAt(event.message, event.authorName);
-	});
-	mod.hook('S_PRIVATE_CHAT', 1, (event) => {
-		if(mod.game.me.is(event.authorID)) return;
-		checkAtAt(event.message, event.authorName);
+		checkAtAt(event.message, event.name);
 	});
 	
 	function checkAtAt(msg, author){
